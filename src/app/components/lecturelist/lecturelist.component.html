@@ -1,0 +1,38 @@
+<div>
+  <h2>Lecture List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Subject</th>
+        <th>Lecture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lectureList">
+        <td>{{ item.id }}</td>
+        <td>{{ item.subject }}</td>
+        <td>{{ item.lecture }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Lecture Item</h3>
+  <form (ngSubmit)="addLectureItem()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="subject">Subject:</label>
+      <input type="text" [(ngModel)]="subject" name="subject"/>
+    </div>
+    <div>
+      <label for="lecture">Lecture:</label>
+      <input type="text" [(ngModel)]="lecture" name="lecture"/>
+    </div>
+    <button type="submit">Add Lecture Item</button>
+  </form>
+</div>

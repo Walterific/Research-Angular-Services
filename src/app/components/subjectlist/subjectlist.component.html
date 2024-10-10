@@ -1,0 +1,37 @@
+<div>
+  <h2>Subject List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Subject</th>
+        <th>Schedule</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of subjects">
+        <td>{{ subject.id }}</td>
+        <td>{{ subject.subject }}</td>
+        <td>{{ subject.schedule }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Subject</h3>
+  <form (ngSubmit)="addSubject()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="name">Subject:</label>
+      <input type="text" [(ngModel)]="subject" name="subject"/>
+    </div>
+    <div>
+      <label for="age">Schedule:</label>
+      <input type="text" [(ngModel)]="schedule" name="schedule"/>
+    </div>
+    <button type="submit">Add Subject</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div>
+  <h2>Painting List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Art</th>
+        <th>Artist</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let painting of paintings">
+        <td>{{ painting.id }}</td>
+        <td>{{ painting.artname }}</td>
+        <td>{{ painting.artist }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Painting</h3>
+  <form (ngSubmit)="addPainting()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="artname">Art Name:</label>
+      <input type="text" [(ngModel)]="artname" name="artname"/>
+    </div>
+    <div>
+      <label for="artist">Artist:</label>
+      <input type="text" [(ngModel)]="artist" name="artist"/>
+    </div>
+    <button type="submit">Add Painting</button>
+  </form>
+</div>

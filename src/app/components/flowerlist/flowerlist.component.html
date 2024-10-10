@@ -1,0 +1,38 @@
+<div>
+  <h2>Flower List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Flower</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flower of flowerList">
+        <td>{{ flower.id }}</td>
+        <td>{{ flower.flower }}</td>
+        <td>{{ flower.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Flower</h3>
+  <form (ngSubmit)="addFlower()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" />
+    </div>
+    <div>
+      <label for="flower">Flower:</label>
+      <input type="text" [(ngModel)]="flower" name="flower" />
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="price" name="price" />
+    </div>
+    <button type="submit">Add Flower</button>
+  </form>
+</div>

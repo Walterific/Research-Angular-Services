@@ -1,0 +1,39 @@
+<div>
+  <h2>Video List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Video</th>
+        <th>Descriptions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let videoItem of videoList">
+        <td>{{ videoItem.id }}</td>
+        <td>{{ videoItem.video }}</td>
+        <td>{{ videoItem.descriptions }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Video</h3>
+  <form (ngSubmit)="addVideo()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" required />
+    </div>
+    <div>
+      <label for="video">Video:</label>
+      <input type="text" [(ngModel)]="video" name="video" required />
+    </div>
+    <div>
+      <label for="descriptions">Descriptions:</label>
+      <input type="text" [(ngModel)]="descriptions" name="descriptions" required />
+    </div>
+    <button type="submit">Add Video</button>
+  </form>
+</div>
+

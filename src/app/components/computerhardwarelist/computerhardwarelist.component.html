@@ -1,0 +1,45 @@
+<div>
+  <h2>Computer Hardware List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Hardware</th>
+        <th>Descriptions</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hardwareItem of computerHardwareList">
+        <td>{{ hardwareItem.id }}</td>
+        <td>{{ hardwareItem.hardware }}</td>
+        <td>{{ hardwareItem.descriptions }}</td>
+        <td>{{ hardwareItem.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Computer Hardware</h3>
+  <form (ngSubmit)="addComputerHardware()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" />
+    </div>
+    <div>
+      <label for="hardware">Hardware:</label>
+      <input type="text" [(ngModel)]="hardware" name="hardware" />
+    </div>
+    <div>
+      <label for="descriptions">Descriptions:</label>
+      <input type="text" [(ngModel)]="descriptions" name="descriptions" />
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="price" name="price" />
+    </div>
+    <button type="submit">Add Computer Hardware</button>
+  </form>
+</div>
+

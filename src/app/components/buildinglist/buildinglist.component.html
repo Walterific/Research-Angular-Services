@@ -1,0 +1,38 @@
+<div>
+  <h2>Building List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Building</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let building of buildings">
+        <td>{{ building.id }}</td>
+        <td>{{ building.buildingname }}</td>
+        <td>{{ building.location }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Building</h3>
+  <form (ngSubmit)="addBuilding()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="buildingname">Building Name:</label>
+      <input type="text" [(ngModel)]="buildingname" name="buildingname"/>
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" [(ngModel)]="location" name="location"/>
+    </div>
+    <button type="submit">Add Building</button>
+  </form>
+</div>
+

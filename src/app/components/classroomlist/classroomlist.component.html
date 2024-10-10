@@ -1,0 +1,38 @@
+<div>
+  <h2>Classroom List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Room</th>
+        <th>Floor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let classroom of classroomList">
+        <td>{{ classroom.id }}</td>
+        <td>{{ classroom.room }}</td>
+        <td>{{ classroom.floor }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Classroom</h3>
+  <form (ngSubmit)="addClassroom()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="room">Room:</label>
+      <input type="text" [(ngModel)]="room" name="room"/>
+    </div>
+    <div>
+      <label for="floor">Floor:</label>
+      <input type="number" [(ngModel)]="floor" name="floor"/>
+    </div>
+    <button type="submit">Add Classroom</button>
+  </form>
+</div>

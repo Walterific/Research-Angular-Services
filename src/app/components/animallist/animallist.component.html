@@ -1,0 +1,39 @@
+<div>
+  <h2>Animal List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Animal</th>
+        <th>Breed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let animal of animals">
+        <td>{{ animal.id }}</td>
+        <td>{{ animal.animal }}</td>
+        <td>{{ animal.breed }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Animal</h3>
+  <form (ngSubmit)="addAnimal()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="animal">Animal:</label>
+      <input type="text" [(ngModel)]="animal" name="animal"/>
+    </div>
+    <div>
+      <label for="breed">Breed:</label>
+      <input type="text" [(ngModel)]="breed" name="breed"/>
+    </div>
+    <button type="submit">Add Animal</button>
+  </form>
+</div>
+

@@ -1,0 +1,45 @@
+<div>
+    <h2>Laptop Specification List</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Laptop</th>
+          <th>Specifications</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let laptopSpec of laptopSpecificationList">
+          <td>{{ laptopSpec.id }}</td>
+          <td>{{ laptopSpec.laptop }}</td>
+          <td>{{ laptopSpec.specs }}</td>
+          <td>{{ laptopSpec.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <br>
+    <h3>Add Laptop Specification</h3>
+    <form (ngSubmit)="addLaptopSpecification()">
+      <div>
+        <label for="id">Id:</label>
+        <input type="text" [(ngModel)]="id" name="id" />
+      </div>
+      <div>
+        <label for="laptop">Laptop:</label>
+        <input type="text" [(ngModel)]="laptop" name="laptop" />
+      </div>
+      <div>
+        <label for="specs">Specifications:</label>
+        <input type="text" [(ngModel)]="specs" name="specs" />
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <input type="number" [(ngModel)]="price" name="price" />
+      </div>
+      <button type="submit">Add Laptop Specification</button>
+    </form>
+  </div>
+  

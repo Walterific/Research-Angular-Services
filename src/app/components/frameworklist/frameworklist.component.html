@@ -1,0 +1,38 @@
+<div>
+    <h2>Framework List</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Framework</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let framework of frameworks">
+          <td>{{ framework.id }}</td>
+          <td>{{ framework.framework }}</td>
+          <td>{{ framework.version }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>Add Framework</h3>
+    <form (ngSubmit)="addFramework()">
+      <div>
+        <label for="id">Id:</label>
+        <input type="text" [(ngModel)]="id" name="id"/>
+      </div>
+      <div>
+        <label for="framework">Framework:</label>
+        <input type="text" [(ngModel)]="framework" name="framework"/>
+      </div>
+      <div>
+        <label for="version">Version:</label>
+        <input type="text" [(ngModel)]="version" name="version"/>
+      </div>
+      <button type="submit">Add Framework</button>
+    </form>
+  </div>
+  

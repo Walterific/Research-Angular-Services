@@ -1,0 +1,33 @@
+<div>
+  <h2>Country List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Country Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries">
+        <td>{{ country.id }}</td>
+        <td>{{ country.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <br>
+  <h3>Add Country</h3>
+  <form (ngSubmit)="addCountry()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="name">Country:</label>
+      <input type="text" [(ngModel)]="name" name="name"/>
+    </div>
+    <button type="submit">Add Country</button>
+  </form>
+</div>
+

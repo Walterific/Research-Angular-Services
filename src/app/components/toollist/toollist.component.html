@@ -1,0 +1,32 @@
+<div>
+  <h2>Tool List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tool</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tool of tools">
+        <td>{{ tool.id }}</td>
+        <td>{{ tool.tool }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Tool</h3>
+  <form (ngSubmit)="addTool()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="tool">Tool:</label>
+      <input type="text" [(ngModel)]="tool" name="tool"/>
+    </div>
+    <button type="submit">Add Tool</button>
+  </form>
+</div>

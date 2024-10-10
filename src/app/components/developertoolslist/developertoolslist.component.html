@@ -1,0 +1,38 @@
+<div>
+    <h2>Developer List</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Software</th>
+          <th>Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let developer of developers">
+          <td>{{ developer.id }}</td>
+          <td>{{ developer.softwareTool }}</td>
+          <td>{{ developer.version }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>Add Developer</h3>
+    <form (ngSubmit)="addDeveloper()">
+      <div>
+        <label for="id">Id:</label>
+        <input type="text" [(ngModel)]="id" name="id"/>
+      </div>
+      <div>
+        <label for="softwareTool">Software Tool:</label>
+        <input type="text" [(ngModel)]="softwareTool" name="softwareTool"/>
+      </div>
+      <div>
+        <label for="version">Version:</label>
+        <input type="text" [(ngModel)]="version" name="version"/>
+      </div>
+      <button type="submit">Add Developer</button>
+    </form>
+  </div>
+  

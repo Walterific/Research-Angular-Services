@@ -1,0 +1,38 @@
+<div>
+  <h2>Software List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Software</th>
+        <th>Version</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let software of softwareList">
+        <td>{{ software.id }}</td>
+        <td>{{ software.software }}</td>
+        <td>{{ software.version }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Software</h3>
+  <form (ngSubmit)="addSoftware()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="software">Software:</label>
+      <input type="text" [(ngModel)]="software" name="software"/>
+    </div>
+    <div>
+      <label for="version">Version:</label>
+      <input type="text" [(ngModel)]="version" name="version"/>
+    </div>
+    <button type="submit">Add Software</button>
+  </form>
+</div>

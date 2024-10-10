@@ -1,0 +1,33 @@
+<div>
+  <h2>Programming Language List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let language of languages">
+        <td>{{ language.id }}</td>
+        <td>{{ language.language }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Programming Language</h3>
+  <form (ngSubmit)="addLanguage()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="language">Language:</label>
+      <input type="text" [(ngModel)]="language" name="language"/>
+    </div>
+    <button type="submit">Add Language</button>
+  </form>
+</div>
+

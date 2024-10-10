@@ -1,0 +1,32 @@
+<div>
+  <h2>Stationery List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stationery of stationeryList">
+        <td>{{ stationery.id }}</td>
+        <td>{{ stationery.item }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Stationery Item</h3>
+  <form (ngSubmit)="addStationeryItem()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="item">Item:</label>
+      <input type="text" [(ngModel)]="item" name="item"/>
+    </div>
+    <button type="submit">Add Stationery Item</button>
+  </form>
+</div>

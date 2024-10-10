@@ -1,0 +1,37 @@
+<div>
+  <h2>Podcast List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Cast</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let podcast of podcasts">
+        <td>{{ podcast.id }}</td>
+        <td>{{ podcast.contentCreator }}</td>
+        <td>{{ podcast.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Podcast</h3>
+  <form (ngSubmit)="addPodcast()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="contentCreator">Content Creator:</label>
+      <input type="text" [(ngModel)]="contentCreator" name="contentCreator"/>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" [(ngModel)]="description" name="description"/>
+    </div>
+    <button type="submit">Add Podcast</button>
+  </form>
+</div>

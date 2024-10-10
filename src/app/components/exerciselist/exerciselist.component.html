@@ -1,0 +1,43 @@
+<div>
+  <h2>Exercise List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Exercise</th>
+        <th>Description</th>
+        <th>Target</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exercise of exercises">
+        <td>{{ exercise.id }}</td>
+        <td>{{ exercise.exerciseName }}</td>
+        <td>{{ exercise.description }}</td>
+        <td>{{ exercise.targetMuscle }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Exercise</h3>
+  <form (ngSubmit)="addExercise()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="exerciseName">Exercise Name:</label>
+      <input type="text" [(ngModel)]="exerciseName" name="exerciseName"/>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" [(ngModel)]="description" name="description"/>
+    </div>
+    <div>
+      <label for="targetMuscle">Target Muscle:</label>
+      <input type="text" [(ngModel)]="targetMuscle" name="targetMuscle"/>
+    </div>
+    <button type="submit">Add Exercise</button>
+  </form>
+</div>

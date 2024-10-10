@@ -1,0 +1,38 @@
+<div>
+  <h2>Vegetable List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Vegetable</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vegetable of vegetables">
+        <td>{{ vegetable.id }}</td>
+        <td>{{ vegetable.vegetable }}</td>
+        <td>{{ vegetable.quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Vegetable</h3>
+  <form (ngSubmit)="addVegetable()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="vegetable">Vegetable:</label>
+      <input type="text" [(ngModel)]="vegetable" name="vegetable"/>
+    </div>
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input type="number" [(ngModel)]="quantity" name="quantity"/>
+    </div>
+    <button type="submit">Add Vegetable</button>
+  </form>
+</div>

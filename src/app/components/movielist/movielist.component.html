@@ -1,0 +1,37 @@
+<div>
+  <h2>Movie List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Movie</th>
+        <th>Year Release</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{ movie.id}}</td>
+        <td>{{ movie.movie}}</td>
+        <td>{{ movie.yearReleased}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Movie</h3>
+  <form (ngSubmit)="addMovie()">
+    <div>
+      <label for="id">Id</label>
+      <input type="text" [(ngModel)]="id" name="id">
+    </div>
+    <div>
+      <label for="movie">Movie</label>
+      <input type="text" [(ngModel)]="movie" name="movie">
+    </div>
+    <div>
+      <label for="id">Year Release</label>
+      <input type="text" [(ngModel)]="yearReleased" name="yearReleased">
+    </div>
+    <button type="submit">Add Movie</button>
+    
+  </form>
+</div>

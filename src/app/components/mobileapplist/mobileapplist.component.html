@@ -1,0 +1,38 @@
+<div>
+  <h2>Mobile App List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>App</th>
+        <th>Descriptions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appItem of mobileAppList">
+        <td>{{ appItem.id }}</td>
+        <td>{{ appItem.app }}</td>
+        <td>{{ appItem.descriptions }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Mobile App</h3>
+  <form (ngSubmit)="addMobileApp()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" required />
+    </div>
+    <div>
+      <label for="app">App:</label>
+      <input type="text" [(ngModel)]="app" name="app" required />
+    </div>
+    <div>
+      <label for="descriptions">Descriptions:</label>
+      <input type="text" [(ngModel)]="descriptions" name="descriptions" required />
+    </div>
+    <button type="submit">Add Mobile App</button>
+  </form>
+</div>

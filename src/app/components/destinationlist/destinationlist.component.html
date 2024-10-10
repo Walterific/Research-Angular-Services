@@ -1,0 +1,44 @@
+<div>
+  <h2>Destination List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Destination</th>
+        <th>Location</th>
+        <th>Entrance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let destination of destinationList">
+        <td>{{ destination.id }}</td>
+        <td>{{ destination.destination }}</td>
+        <td>{{ destination.location }}</td>
+        <td>{{ destination.entrancePrice }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Destination</h3>
+  <form (ngSubmit)="addDestination()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" />
+    </div>
+    <div>
+      <label for="destination">Destination:</label>
+      <input type="text" [(ngModel)]="destination" name="destination" />
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" [(ngModel)]="location" name="location" />
+    </div>
+    <div>
+      <label for="entrancePrice">Entrance Price:</label>
+      <input type="number" [(ngModel)]="entrancePrice" name="entrancePrice" />
+    </div>
+    <button type="submit">Add Destination</button>
+  </form>
+</div>

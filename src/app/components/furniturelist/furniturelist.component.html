@@ -1,0 +1,44 @@
+<div>
+  <h2>Furniture List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Furniture</th>
+        <th>Wood Type</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let furniture of furnitureList">
+        <td>{{ furniture.id }}</td>
+        <td>{{ furniture.furniturename }}</td>
+        <td>{{ furniture.woodtype }}</td>
+        <td>{{ furniture.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Furniture</h3>
+  <form (ngSubmit)="addFurniture()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" required />
+    </div>
+    <div>
+      <label for="furniturename">Furniture Name:</label>
+      <input type="text" [(ngModel)]="furniturename" name="furniturename" required />
+    </div>
+    <div>
+      <label for="woodtype">Wood Type:</label>
+      <input type="text" [(ngModel)]="woodtype" name="woodtype" required />
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="price" name="price" required />
+    </div>
+    <button type="submit">Add Furniture</button>
+  </form>
+</div>

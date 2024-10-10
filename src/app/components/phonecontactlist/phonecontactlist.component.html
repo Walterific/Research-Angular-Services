@@ -1,0 +1,39 @@
+<div>
+  <h2>Phone Contact List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Contact</th>
+        <th>Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.contactName }}</td>
+        <td>{{ contact.number }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Contact</h3>
+  <form (ngSubmit)="addContact()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="contactName">Contact Name:</label>
+      <input type="text" [(ngModel)]="contactName" name="contactName"/>
+    </div>
+    <div>
+      <label for="number">Number:</label>
+      <input type="text" [(ngModel)]="number" name="number"/>
+    </div>
+    <button type="submit">Add Contact</button>
+  </form>
+</div>
+

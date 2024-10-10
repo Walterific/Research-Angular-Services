@@ -1,0 +1,32 @@
+<div>
+  <h2>Sport List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Sport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sport of sports">
+        <td>{{ sport.id }}</td>
+        <td>{{ sport.sport }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Sport</h3>
+  <form (ngSubmit)="addSport()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="sport">Sport:</label>
+      <input type="text" [(ngModel)]="sport" name="sport"/>
+    </div>
+    <button type="submit">Add Sport</button>
+  </form>
+</div>

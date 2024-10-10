@@ -1,0 +1,39 @@
+<div>
+  <h2>Laptop List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Laptop</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let laptop of laptopList">
+        <td>{{ laptop.id }}</td>
+        <td>{{ laptop.laptop }}</td>
+        <td>{{ laptop.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Laptop</h3>
+  <form (ngSubmit)="addLaptop()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" />
+    </div>
+    <div>
+      <label for="laptop">Laptop:</label>
+      <input type="text" [(ngModel)]="laptop" name="laptop" />
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="price" name="price" />
+    </div>
+    <button type="submit">Add Laptop</button>
+  </form>
+</div>
+

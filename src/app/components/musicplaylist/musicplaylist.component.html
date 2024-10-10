@@ -1,0 +1,38 @@
+<div>
+  <h2>Music Playlist</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Music</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of playlist">
+        <td>{{ item.id }}</td>
+        <td>{{ item.music }}</td>
+        <td>{{ item.genre }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Music</h3>
+  <form (ngSubmit)="addMusic()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="music">Music:</label>
+      <input type="text" [(ngModel)]="music" name="music"/>
+    </div>
+    <div>
+      <label for="genre">Genre:</label>
+      <input type="text" [(ngModel)]="genre" name="genre"/>
+    </div>
+    <button type="submit">Add Music</button>
+  </form>
+</div>

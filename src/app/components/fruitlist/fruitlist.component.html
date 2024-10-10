@@ -1,0 +1,37 @@
+<div>
+  <h2>Fruit List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fruit of fruits">
+        <td>{{ fruit.id }}</td>
+        <td>{{ fruit.name }}</td>
+        <td>{{ fruit.number }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Fruit</h3>
+  <form (ngSubmit)="addFruit()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" [(ngModel)]="name" name="name"/>
+    </div>
+    <div>
+      <label for="number">Number:</label>
+      <input type="number" [(ngModel)]="number" name="number"/>
+    </div>
+    <button type="submit">Add Fruit</button>
+  </form>
+</div>

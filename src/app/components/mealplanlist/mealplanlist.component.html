@@ -1,0 +1,43 @@
+<div>
+  <h2>Meal Plan List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Food</th>
+        <th>Day</th>
+        <th>Meal Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mealPlan of mealPlans">
+        <td>{{ mealPlan.id }}</td>
+        <td>{{ mealPlan.foodName }}</td>
+        <td>{{ mealPlan.day }}</td>
+        <td>{{ mealPlan.mealType }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Meal Plan</h3>
+  <form (ngSubmit)="addMealPlan()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="foodName">Food Name:</label>
+      <input type="text" [(ngModel)]="foodName" name="foodName"/>
+    </div>
+    <div>
+      <label for="day">Day:</label>
+      <input type="text" [(ngModel)]="day" name="day"/>
+    </div>
+    <div>
+      <label for="mealType">Meal Type:</label>
+      <input type="text" [(ngModel)]="mealType" name="mealType"/>
+    </div>
+    <button type="submit">Add Meal Plan</button>
+  </form>
+</div>

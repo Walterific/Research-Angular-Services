@@ -1,0 +1,45 @@
+<div>
+  <h2>TV Show List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Show</th>
+        <th>Channel</th>
+        <th>Parental Guidance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let show of tvShowList">
+        <td>{{ show.id }}</td>
+        <td>{{ show.showname }}</td>
+        <td>{{ show.channel }}</td>
+        <td>{{ show.parentalGuidance }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add TV Show</h3>
+  <form (ngSubmit)="addShow()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id" required />
+    </div>
+    <div>
+      <label for="showname">Show Name:</label>
+      <input type="text" [(ngModel)]="showname" name="showname" required />
+    </div>
+    <div>
+      <label for="channel">Channel:</label>
+      <input type="text" [(ngModel)]="channel" name="channel" required />
+    </div>
+    <div>
+      <label for="parentalGuidance">Parental Guidance:</label>
+      <input type="text" [(ngModel)]="parentalGuidance" name="parentalGuidance" required />
+    </div>
+    <button type="submit">Add Show</button>
+  </form>
+</div>
+

@@ -1,0 +1,37 @@
+<div>
+  <h2>Book List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.id }}</td>
+        <td>{{ book.bookname }}</td>
+        <td>{{ book.yearPublished }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Book</h3>
+  <form (ngSubmit)="addBook()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" [(ngModel)]="bookname" name="bookname"/>
+    </div>
+    <div>
+      <label for="age">Year Published:</label>
+      <input type="number" [(ngModel)]="yearPublished" name="yearpublished"/>
+    </div>
+    <button type="submit">Add Book</button>
+  </form>
+</div>

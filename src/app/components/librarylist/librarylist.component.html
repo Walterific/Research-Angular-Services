@@ -1,0 +1,44 @@
+<div>
+    <h2>Library List</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Library</th>
+          <th>Opening</th>
+          <th>Closing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let library of libraries">
+          <td>{{ library.id }}</td>
+          <td>{{ library.libraryName }}</td>
+          <td>{{ library.opening }}</td>
+          <td>{{ library.closing }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>Add Library</h3>
+    <form (ngSubmit)="addLibrary()">
+      <div>
+        <label for="id">Id:</label>
+        <input type="text" [(ngModel)]="id" name="id"/>
+      </div>
+      <div>
+        <label for="libraryName">Library Name:</label>
+        <input type="text" [(ngModel)]="libraryName" name="libraryName"/>
+      </div>
+      <div>
+        <label for="opening">Opening:</label>
+        <input type="text" [(ngModel)]="opening" name="opening"/>
+      </div>
+      <div>
+        <label for="closing">Closing:</label>
+        <input type="text" [(ngModel)]="closing" name="closing"/>
+      </div>
+      <button type="submit">Add Library</button>
+    </form>
+  </div>
+  

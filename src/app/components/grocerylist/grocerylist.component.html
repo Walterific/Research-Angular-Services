@@ -1,0 +1,46 @@
+<div>
+  <h2>Grocery List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of groceryList">
+        <td>{{ item.id }}</td>
+        <td>{{ item.product }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h3>Add Grocery Item</h3>
+  <form (ngSubmit)="addGrocery()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="product">Product:</label>
+      <input type="text" [(ngModel)]="product" name="product"/>
+    </div>
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input type="number" [(ngModel)]="quantity" name="quantity"/>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" [(ngModel)]="price" name="price"/>
+    </div>
+    <button type="submit">Add Grocery Item</button>
+  </form>
+</div>

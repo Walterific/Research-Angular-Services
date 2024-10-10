@@ -1,0 +1,37 @@
+<div>
+  <h2>Presentation List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Software</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let presentation of presentations">
+        <td>{{ presentation.id }}</td>
+        <td>{{ presentation.title }}</td>
+        <td>{{ presentation.softwareTool }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Presentation</h3>
+  <form (ngSubmit)="addPresentation()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" [(ngModel)]="title" name="title"/>
+    </div>
+    <div>
+      <label for="softwaretool">Software Tool:</label>
+      <input type="text" [(ngModel)]="softwareTool" name="softwaretool"/>
+    </div>
+    <button type="submit">Add Presentation</button>
+  </form>
+</div>

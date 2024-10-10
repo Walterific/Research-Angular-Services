@@ -1,0 +1,37 @@
+<div>
+  <h2>Artist List</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Artist</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artist of artists">
+        <td>{{ artist.id }}</td>
+        <td>{{ artist.artist }}</td>
+        <td>{{ artist.gender }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add Artist</h3>
+  <form (ngSubmit)="addArtist()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id"/>
+    </div>
+    <div>
+      <label for="artist">Artist:</label>
+      <input type="text" [(ngModel)]="artist" name="artist"/>
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <input type="text" [(ngModel)]="gender" name="gender"/>
+    </div>
+    <button type="submit">Add Artist</button>
+  </form>
+</div>

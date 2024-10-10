@@ -1,0 +1,31 @@
+<div>
+  <h2>City List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of cities">
+        <td>{{ city.id}}</td>
+        <td>{{ city.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h3>Add City</h3>
+  <form (ngSubmit)="addCity()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" [(ngModel)]="id" name="id">
+    </div>
+    <div>
+      <label for="id">City:</label>
+      <input type="text" [(ngModel)]="city" name="city">
+    </div>
+    <button type="submit">Add City</button>
+  </form>
+</div>
